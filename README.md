@@ -27,7 +27,7 @@ from only the current screen, they consider sequences of actions and observation
 
 The goal of the agent: Maximize future rewards.  
 Make assumption: future rewards are discounted by a factor of ![equation](https://latex.codecogs.com/gif.latex?%5Cgamma) per time-step.  
-Define the future reward at time t as ![equation](https://latex.codecogs.com/gif.latex?R_%7Bt%7D%20%3D%20%5Csum_%7Bt%5E%7B%27%7D%3Dt%7D%5E%7BT%7D%5Cgamma%20%5E%7Bt%5E%7B%27%7D-t%7Dr%20_%7Bt%5E%7B%27%7D%7D) where T is the terminal time.  
+Define the future reward at time t as ![image](https://user-images.githubusercontent.com/30262658/50749953-9027f980-1285-11e9-81b3-9a4a5a5910a9.png) where T is the terminal time.  
 Define optimal action-value function ![equation](https://latex.codecogs.com/gif.latex?Q%5E%7B*%7D%28s%2Ca%29%20%3D%20max_%7B%5Cpi%20%7DE%5BR_%7Bt%7D%7Cs_%7Bt%7D%3Ds%2C%20a_%7Bt%7D%3Da%2C%5Cpi%5D) where ![equation](https://latex.codecogs.com/gif.latex?%5Cpi) is a policy mapping sequences to actions (distributions over actions)  
 The basic idea behind RL algorithm is to estimate the action-value function, by using *Bellan equation* as an iterative update, ![equation](https://latex.codecogs.com/gif.latex?Q_%7Bi&plus;1%7D%28s%2Ca%29%20%3D%20E%5Br&plus;%5Cgamma%20max_%7Ba%5E%7B%27%7D%7DQ_%7Bi%7D%28s%5E%7B%27%7D%2Ca%5E%7B%27%7D%29%7C%20s%2Ca%5D) which is called *value-iteration algorithm.*  
 However, this approach is impractical because action-value function is estimated separately[독립적으로] for each sequence. (각각의 sequence (고차원의 data)에 대해서 함수를 estimate하기에는 시간과 메모리 문제) Therefore, it's common to use a function approximator (sequence의 경향성(parameter)을 통해 함수화 시켜놓는 것), ![image](https://user-images.githubusercontent.com/30262658/50748471-f0666d80-127c-11e9-9b6b-f66a978a600a.png)  
