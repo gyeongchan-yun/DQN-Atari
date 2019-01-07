@@ -67,3 +67,7 @@ data sample that the parameters are trained on.
 fixed all positive rewards to be 1 and all negative rewards to be −1, leaving 0 rewards unchanged.
 - used the *RMSProp* algorithm with minibatches of size 32.
 - use a simple *frame-skipping technique*. More precisely, the agent sees and selects actions on every kth frame instead of every frame.
+
+**References**  
+- http://sanghyukchun.github.io/90/
+- https://datascience.stackexchange.com/questions/20535/what-is-experience-replay-and-what-are-its-benefits
